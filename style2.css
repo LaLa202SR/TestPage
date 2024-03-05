@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+body {
+    background: rgb(236, 255, 253);
+    margin: 0;
+}
+
+header {
+    background-color: #3F51B5;
+    color: #fff;
+}
+
+#title {
+    text-align: center;
+    margin: 0 0 0 0;
+    padding-top: 5px;
+    font-size: 4rem;
+    font-family: "DotGothic16", sans-serif;
+}
+
+#sub-title {
+    text-align: center;
+    margin: 0 0 0 0;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+    font-family: "DotGothic16", sans-serif;
+}
+
+.menu {
+    font-size: 2rem;
+    text-align: center;
+    font-family: "DotGothic16", sans-serif;
+    margin: 50px 0 10px 0;
+    color: #3F51B5;
+}
+
+input {
+    width: 150px;
+    /*親要素いっぱい広げる*/
+    /* padding: 10px 15px; */
+    /*ボックスを大きくする*/
+    font-size: 16px;
+    border: 2px solid #3F51B5;
+    background-color: #fff;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.output {
+    text-align: right;
+}
+
+.output2 {
+    text-align: center;
+}
+
+#btn01 {
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #ff6d7c;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    margin: 0 12px;
+}
+
+#btn02 {
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #ff6d7c;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    margin: 0 12px;
+}
+
+#btn03 {
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #ff6d7c;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    margin: 0 10px 0 10px;
+}
+
+#btn04 {
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #ff6d7c;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    margin: 0 10px 0 10px;
+}
+
+#btn05 {
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #ff6d7c;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    margin: 0 12px;
+}
+
+#addbtn {
+    width: 330px;
+    margin: 10px auto;
+}
+
+/* table {
+    color: rgb(0, 0, 0);
+    margin: auto;
+    border-style: groove;
+    border: double 1px black;
+    width: 100%;
+    border-spacing: 10px;
+    border: #000000;
+    border-collapse: collapse;
+    border-color: #333;
+    border-width: 1rem;
+} */
+
+table th,
+table td {
+    /* border: solid 1px rgb(0, 217, 255); */
+    /* border-radius: 10%; */
+    padding: 10px 10px 10px 10px;
+}
+
+th {
+    background-color: #3F51B5;
+    /* 背景色指定 */
+    color: #fff;
+    /* 文字色指定 */
+    font-weight: normal;
+    /* 文字の太さ指定 */
+}
+
+td {
+    background-color: #c0c9ff;
+    /* 背景色指定 */
+}
+
+/* フッター ---------------------------- */
+footer {
+    background: #3F51B5;
+    text-align: center;
+    padding: 26px 0;
+}
+
+footer p {
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+/*========= くるくる回るテキスト ===============*/
+
+.rollAnime.roll span {
+    transition-property: opacity, transform;
+    transform: rotateY(360deg);
+    transition: all .8s cubic-bezier(.77, 0, .175, 1);
+    transition-timing-function: cubic-bezier(.77, 0, .175, 1);
+    display: inline-block;
+}
