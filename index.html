@@ -222,7 +222,7 @@
       $("#btn04").click(function () {
         number = number + 1;
         console.log("number :", number);
-        $('table#addlist').append(`<tr><td data-label="お名前">${number}.<input type="text" id="name${number}" value="" placeholder=" 入力してください"> さん</td><td data-label="お預かり金額"><input type="number" id="name${number}pay" value="" placeholder=" 入力してください"> 円</td><td data-label="お返し金額" class="output"><span id="pay${number}" class="p-span_result"></span> 円</td></tr>`);
+        $('table#addlist').append(`<tr><td data-label="お名前">${number}.<input type="text" id="name${number}" value=""> さん</td><td data-label="お預かり金額"><input type="number" id="name${number}pay" value=""> 円</td><td data-label="お返し金額" class="output"><span id="pay${number}" class="p-span_result"></span> 円</td></tr>`);
         $('#people3').val(number);
 
       });
