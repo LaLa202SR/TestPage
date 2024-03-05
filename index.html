@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name='robots' content='noindex' />
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>割り勘かんぺきアプリ</title>
+  <meta name="description" content="">
+  <!-- reset.css ress -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- css読み込み -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style2.css">
+  <link rel="stylesheet" type="text/css" href="css/sp.css" media="screen and (max-width: 640px)">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=DotGothic16&display=swap"
+    rel="stylesheet">
+  <!-- back -->
+  <!-- <link rel="stylesheet" type="text/css" href="css/5-4.css"> -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body>
+  <!-- <div id="particles-js"></div> -->
+  <!--backのJS-->
+  <!-- <script src="js/5-4.js"></script> -->
+  <!-- <div id="wrapper"></div> -->
+
+  <header>
+    <!-- <div class="wrapper"></div> -->
+    <p class="rollAnime" id="title">割り勘かんぺきアプリ</p>
+    <p class="rollAnime" id="sub-title">～皆様の円滑な割り勘をサポートします～</p>
+
+  </header>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/8-7/js/8-7.js"></script> -->
+  <script src="js/roll.js"></script>
+
+
+
+  <div id="wrapper">
+    <main>
+      <div class="contents-block outer-block">
+        <div class="inner-block">
+
+          <h2 class="rollAnime menu">[ 割り勘 計算機 ]</h2>
+          <table class="tbl-r03">
+            <thead>
+              <tr>
+                <th>会計総額</th>
+                <th>人数</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="last">
+                <td><input type="number" id="kaikei" value="" placeholder=" 入力してください"> 円</td>
+                <td><input type="number" id="people" value="" placeholder=" 入力してください"> 人</td>
+                <td rowspan="2"><input id="btn01" type="button" value="割り勘実行" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <table class="tbl-r03">
+            <thead>
+              <tr>
+                <th>ぴったりの一人当たりの料金</th>
+                <th>おすすめの割り勘方法（不足分を1人が負担する場合）</th>
+                <th>おすすめの割り勘方法（不足を生まずお釣りにする場合）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="last">
+                <td class="output"><span id="result01" class="p-span_result"></span>円</td>
+                <td class="output2">一人《<span id="result04" class="p-span_result"></span>円》で
+                  、不足の《<span id="result05" class="p-span_result"></span>円》は誰かが持つ</td>
+                <td class="output2">一人《<span id="result06" class="p-span_result"></span>円》で
+                  、お釣りは《<span id="result07" class="p-span_result"></span>円》</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+
+          <!-- ========================================================================================================================= -->
+          <h2 class="rollAnime menu">[ 各自の出すお金バラバラだった時用 計算機 ]</h2>
+          <table class="tbl-r03">
+            <thead>
+              <tr>
+                <th>会計総額</th>
+                <th>人数</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="number" id="kaikei3" value="" placeholder=" 入力してください" min="0"> 円</td>
+                <td><input type="number" id="people3" value="" placeholder=" 入力してください" min="0"> 人</td>
+                <td rowspan="2"><input id="btn05" type="button" value="人数決定" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <table id="addlist" class="tbl-r05">
+          </table>
+          <div id="addbtn"></div>
+
+          <!-- ========================================================================================================================= -->
+          <h2 class="rollAnime menu">[ お釣り・不足 計算機 ]</h2>
+          <table class="tbl-r03">
+            <thead>
+              <tr>
+                <th>一人当たりの支払い額</th>
+                <th>人数</th>
+                <th>会計総額</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="number" id="kingaku" value="" placeholder=" 入力してください" min="0"> 円</td>
+                <td><input type="number" id="people2" value="" placeholder=" 入力してください"> 人</td>
+                <td><input type="number" id="sogaku" value="" placeholder=" 入力してください"> 円</td>
+                <td><input id="btn02" type="button" value="計算実行" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <table class="tbl-r03">
+            <thead>
+              <tr>
+                <th>お釣り</th>
+                <th>一人当たりのお釣り</th>
+                <th>不足</th>
+                <th>一人当たりの不足</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="output"><span id="result02" class="p-span_result"></span>円</td>
+                <td class="output"><span id="result03" class="p-span_result"></span>円</td>
+                <td class="output"><span id="result08" class="p-span_result"></span>円</td>
+                <td class="output"><span id="result09" class="p-span_result"></span>円</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div><!-- /inner-block -->
+      </div><!-- /contents-block -->
+    </main>
+
+  </div><!-- /wrapper -->
+  <footer>
+    <div class="wrapper">
+      <p><small>&copy;2024 SR</small></p>
+    </div>
+  </footer>
+</body>
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+  'use strict';
+  // ------　▼　DOMメソッドバージョン　▼　-----
+  // let value03_01 = document.getElementById('kaikei3');
+  // let value03_02 = document.getElementById('people3');
+  // let value03_03 = document.getElementById('name1-pay');
+  // document.getElementById('btn03').addEventListener('click', function () {
+  //     let result10 = parseInt(value03_01.value) / parseInt(value03_02.value);
+  //     /// #addlist の子要素 tr のうち td 要素を持つもの をすべて取得 (thを含む1行目を除く)
+  //     let members = document.querySelectorAll("#addlist tr:has(td)");
+  //     members.forEach(function (item, index) {
+  //         // console.log("money:", item.querySelector("[type='number']"))
+  //         // console.log("span:", item.querySelector(".p-span_result"))
+  //         item.querySelector("span").textContent =
+  //             parseInt(item.querySelector("input[type='number']").value) - result10
+  //     });
+  // });
+  // ------　▲　DOMメソッドバージョン　▲　-----
+
+  $(function () {
+
+    // ------　▼　JQueryバージョン　▼　-----
+
+    // $('#btn03').on('click', function () {
+    //     let result10 = parseInt($('#kaikei3').val()) / parseInt($('#people3').val());
+
+    //     $("#addlist tr:has(td)").each(function (index, item) {
+    //         let pay = parseInt($(item).find("input[type='number']").val());
+    //         $(item).find("span").text(parseInt(pay - result10));
+    //     });
+    // });
+    // ------　▲　JQueryバージョン　▲　-----
+
+    let number = 0;
+
+    // 人数を決定するとth、割り勘、リスト追加ボタン表示
+    // $(function () {
+    $('#btn05').one("click", function () {
+      $('table#addlist').prepend('<tr class="thead"><th>お名前</th><th>お預かり金額</th><th>お返し金額</th></tr>')
+      $('div#addbtn').append('<button id="btn03">割り勘実行</button><button id="btn04">+ リストを追加</button>')
+
+      //#btn03と#btn04はページを読み込んだ時点では存在しないので、追加した時にイベントリスナー・イベントハンドラーを設置する
+      $('#btn03').on('click', function () {
+        let result10 = parseInt($('#kaikei3').val()) / parseInt($('#people3').val());
+
+        $("#addlist tr:has(td)").each(function (index, item) {
+          let pay = parseInt($(item).find("input[type='number']").val());
+          $(item).find("span").text(parseInt(pay - result10));
+        });
+      });
+      $("#btn04").click(function () {
+        number = number + 1;
+        console.log("number :", number);
+        $('table#addlist').append(`<tr><td data-label="お名前">${number}.<input type="text" id="name${number}" value="" placeholder=" 入力してください"> さん</td><td data-label="お預かり金額"><input type="number" id="name${number}pay" value="" placeholder=" 入力してください"> 円</td><td data-label="お返し金額" class="output"><span id="pay${number}" class="p-span_result"></span> 円</td></tr>`);
+        $('#people3').val(number);
+
+      });
+
+    })
+    // });
+
+    // 人数を入力し#btn05をクリックすると人数分の入力欄を表示
+    $("#btn05").on('click', function () {
+      // 人数を再入力する場合は前回の入力リスト(<td>を含む<tr>)を削除しておく
+      $('#addlist tr').remove(':has(td)');
+      number = parseInt($('#people3').val());
+      for (let i = 0; i < number; i++) {
+        $('table#addlist').append(`<tr><td data-label="お名前">${i + 1}.<input type="text" id="name${i + 1}" value="">さん</td><td data-label="お預かり金額"><input type="number" id="name${i}pay" value="" >円</td><td data-label="お返し金額" class="output"><span id="pay${i}" class="p-span_result"></span>円</td></tr>`)
+      }
+    });
+    // 後から「リスト追加」ボタンで入力欄を追加、追加した分計算に使う人数(#people3のvalue値)も増やす
+    // $("#btn04").click(function () {
+    //     number = number + 1;
+    //     console.log("number :", number);
+    //     $('table#addlist').append(`<tr><td>${number}.<input type="text" id="name${number}" value="">さん</td><td><input type="number" id="name${number}pay" value="">円</td><td class="output"><span id="pay${number}" class="p-span_result"></span>円</td></tr>`);
+    //     $('#people3').val(number);
+    // });
+
+  });
+
+  let value01_01 = document.getElementById('kaikei');
+  let value01_02 = document.getElementById('people');
+  document.getElementById('btn01').addEventListener('click', function () {
+    var result01 = parseInt(kaikei.value) / parseInt(people.value);
+    document.getElementById('result01').textContent = result01;
+    var result04 = result01 - result01 % 100;
+    document.getElementById('result04').textContent = result04;
+    var result05 = parseInt(kaikei.value) - result04 * parseInt(people.value);
+    document.getElementById('result05').textContent = result05;
+    var result06 = result04 + 100;
+    document.getElementById('result06').textContent = result06;
+    var result07 = result06 * parseInt(people.value) - parseInt(kaikei.value);
+    document.getElementById('result07').textContent = result07;
+  });
+
+  let value02_01 = document.getElementById('sogaku');
+  let value02_02 = document.getElementById('kingaku');
+  let value02_03 = document.getElementById('people2');
+  document.getElementById('btn02').addEventListener('click', function () {
+    var result02 = parseInt(kingaku.value) * parseInt(people2.value) - parseInt(sogaku.value);
+    var result03 = result02 / parseInt(people2.value);
+    if (result02 > 0) {
+      document.getElementById('result02').textContent = result02;
+      var result03 = result02 / parseInt(people2.value);
+      document.getElementById('result03').textContent = result03;
+      document.getElementById('result08').textContent = 0;
+      document.getElementById('result09').textContent = 0;
+    } else if (result02 < 0) {
+      var result08 = Math.abs(result02);
+      document.getElementById('result08').textContent = result08;
+      var result09 = Math.abs(result03);
+      document.getElementById('result09').textContent = result09;
+      document.getElementById('result02').textContent = 0;
+      document.getElementById('result03').textContent = 0;
+    }
+  });
+
+
+
+</script>
+
+</html>
