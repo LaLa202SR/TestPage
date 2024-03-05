@@ -1,0 +1,494 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------------------
+  reset
+------------------------------------------------------------------------------*/
+
+html {
+    color: #333;
+    background: rgb(236, 255, 253);
+    font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: break-all;
+}
+
+/* IE10以降 游ゴシック文字ずれ対応 */
+
+@media all and (-ms-high-contrast: none) {
+    html {
+        font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, Osaka, sans-serif, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic;
+    }
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+img {
+    border: 0;
+    margin: 0;
+    vertical-align: top;
+    max-width: 100%;
+}
+
+p {
+    margin: 0 0 1em;
+    padding: 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, sans-serif;
+}
+
+input[type="submit"],
+input[type="text"],
+select,
+textarea,
+button {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    text-align: center;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    border-color: #333;
+    border-width: 1rem;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+} */
+
+.outer-block {
+    min-width: 1040px;
+}
+
+.inner-block {
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 1000px;
+}
+
+#wrapper {
+    position: relative;
+}
+
+.pc {
+    display: block !important;
+}
+
+.pc-ib {
+    display: inline-block !important;
+}
+
+.sp {
+    display: none !important;
+}
+
+.sp-ib {
+    display: none !important;
+}
+
+@media screen and (min-width: 641px) {
+
+    a,
+    a:before,
+    a:after,
+    a img:hover,
+    button,
+    .pagenation .page-num-ul li:hover,
+    .pagenation .prev:hover,
+    .pagenation .next:hover,
+    .back-feature:hover {
+        -webkit-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+    }
+
+    a:hover,
+    a img:hover,
+    button:hover {
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        font-size: 12px;
+        position: relative;
+        -webkit-appearance: none;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    table {
+        color: rgb(0, 0, 0);
+        margin: auto;
+        /* border-style: groove;
+    border: double 1px black; */
+        /* width: 100%; */
+        border-spacing: 10px;
+        border: #000000;
+        border-collapse: collapse;
+        border-color: #333;
+        border-width: 1rem;
+    }
+
+    .outer-block {
+        min-width: 320px;
+    }
+
+    .inner-block {
+        padding: 0;
+        width: auto;
+    }
+
+    #wrapper {
+        min-width: 320px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    input[type="submit"] {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+
+    .pc {
+        display: none !important;
+    }
+
+    .pc-ib {
+        display: none !important;
+    }
+
+    .sp {
+        display: block !important;
+    }
+
+    .sp-ib {
+        display: inline-block !important;
+    }
+}
+
+/*------------------------------------------------------------------------------
+  comment
+------------------------------------------------------------------------------*/
+/* p {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 60px auto 40px;
+} */
+
+th {
+    /* background: #e9727e; */
+    border: solid 3px #ffffff;
+    /* color: #fff; */
+    /* padding: 10px; */
+}
+
+td {
+    border: solid 3px #ffffff;
+    /* padding: 10px; */
+}
+
+table {
+    margin: auto;
+}
+
+/* .tbl-r02 th {
+    padding: 10px;
+}
+
+.tbl-r02 td {
+    padding: 10px;
+} */
+
+/* .tbl-r05 td:first-child {
+    background: #fbf5f5;
+}
+
+.tbl-r06 tr:nth-child(even) {
+    background: #fbf5f5;
+}
+
+.tbl-r06 td {
+    border: none;
+}
+
+.tbl-r06 .last {
+    border-bottom: solid 1px #ccc;
+}
+
+.tbl-r07 {
+    margin: 0 auto 70px;
+} */
+
+
+@media screen and (max-width: 640px) {
+    th {
+        border-bottom: none;
+    }
+
+    td {
+        border-bottom: none;
+    }
+
+    .last td:last-child {
+        border-bottom: solid 1px #ccc;
+        width: 100%;
+    }
+
+    .tbl-r02 {
+        width: 80%;
+    }
+
+    .tbl-r02 th,
+    .tbl-r02 td {
+        display: block;
+        width: 100%;
+    }
+
+    .tbl-r03 {
+        width: 115%;
+    }
+
+    .tbl-r03 tr {
+        display: block;
+        float: left;
+    }
+
+    .tbl-r03 tr td,
+    .tbl-r03 tr th {
+        border-left: none;
+        display: block;
+        height: 60px;
+    }
+
+    .tbl-r03 thead {
+        display: block;
+        float: left;
+        width: 45%;
+        height: 100px;
+    }
+
+    .tbl-r03 thead tr {
+        width: 100%;
+    }
+
+    .tbl-r03 tbody {
+        display: block;
+        float: right;
+        width: 55%;
+    }
+
+    .tbl-r03 tbody tr {
+        width: 75%;
+    }
+
+    .tbl-r03 tr td+td {
+        border-left: none;
+    }
+
+    .tbl-r03 tbody td:last-child {
+        border-bottom: solid 1px #ccc;
+    }
+
+    .tbl-r04 {
+        width: 80%;
+    }
+
+    .tbl-r04 .thead {
+        display: none;
+    }
+
+    .tbl-r04 tr,
+    .tbl-r04 td {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    .tbl-r04 td:first-child:before {
+        content: "見出し:before";
+        background: #ffc3c9;
+        box-sizing: border-box;
+        color: #fff;
+        font-weight: bold;
+        height: 40px;
+        padding: 10px;
+        position: absolute;
+        top: -41px;
+        left: -0.2%;
+        display: block;
+        width: 100.5%;
+    }
+
+    .tbl-r04 tr {
+        margin-bottom: 40px;
+    }
+
+    .tbl-r05 {
+        width: 80%;
+    }
+
+    .tbl-r05 .thead {
+        display: none;
+    }
+
+    .tbl-r05 tr {
+        width: 100%;
+    }
+
+    .tbl-r05 td {
+        display: block;
+        text-align: right;
+        width: 100%;
+    }
+
+    .tbl-r05 td:first-child {
+        background: #ff909b;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .tbl-r05 td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .tbl-r06 {
+        width: 80%;
+    }
+
+    .tbl-r06 .thead {
+        display: none;
+    }
+
+    .tbl-r06 td {
+        display: inline-block;
+    }
+
+    .tbl-r06 span {
+        font-weight: bold;
+    }
+
+    .tbl-r06 .last {
+        border-bottom: none;
+    }
+
+    .scroll {
+        overflow-x: auto;
+    }
+
+    .tbl-r07 {
+        min-width: 640px;
+        margin: 0 10px 50px;
+    }
+
+    .tbl-r07 td {
+        border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+    }
+}
+
+.tbl-m01 {
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+.tbl-m01.m02 {
+    border-spacing: 10px 0;
+    margin: 0 auto 100px;
+}
+
+.tbl-m01.m02 th {
+    border: none;
+}
+
+.tbl-m01.m02 td {
+    background: #fbf5f5;
+    border: none;
+}
+
+@media screen and (max-width: 640px) {
+    .tbl-m01 th {
+        width: 20%;
+    }
+
+    .tbl-m01 td {
+        border-bottom: solid 1px #ccc;
+        width: 25%;
+    }
+}
+
+/*------------------------------------------------------------------------------
+  clearfix
+------------------------------------------------------------------------------*/
+
+.clearfix:after,
+.inner-block:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0px;
+    font-size: 0;
+    visibility: hidden;
+}
